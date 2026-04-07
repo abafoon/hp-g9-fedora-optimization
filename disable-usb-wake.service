@@ -1,0 +1,12 @@
+[Unit]
+Description=Fix HP G9 Battery Drain by disabling USB Wake
+After=multi-user.target
+Conflicts=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/disable-usb-wake.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
